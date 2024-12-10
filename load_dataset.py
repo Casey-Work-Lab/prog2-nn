@@ -34,3 +34,4 @@ print(image.min(), image.max())
 # plt.show()
 
 # ctrl + / 
+#こんにちは
