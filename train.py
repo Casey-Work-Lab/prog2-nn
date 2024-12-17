@@ -86,11 +86,13 @@ for k in range(n_epochs):
     time_end = time.time()
     print(f"test loss: {loss_test:.3f} ({time_end - time_start:.1f}s)", end=", ")
 
-    time_start = time.time()
-    acc_train = models.test_accuracy(model, dataloader_train, device=device)
-    acc_train_history.append(acc_train)
-    time_end = time.time()
-    print(f"train accuracy:{acc_train*100:.2f}% ({time_end - time_start:.1f}s)", end=", ")
+
+    if (k+1) % 5 == 0:
+        time_start = time.time()
+        acc_train = models.test_accuracy(model, dataloader_train, device=device)
+        acc_train_history.append(acc_train)
+        time_end = time.time()
+        print(f"train accuracy:{acc_train*100:.2f}% ({time_end - time_start:.1f}s)", end=", ")
 
     time_start = time.time()
     acc_test = models.test_accuracy(model, dataloader_test, device=device)
