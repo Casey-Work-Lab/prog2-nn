@@ -1,9 +1,9 @@
+"""学習されていないネットワークを使って予測をする"""
 import matplotlib.pyplot as plt
 
 import torch
 from torchvision import datasets
 import torchvision.transforms.v2 as transforms
-
 import models
 
 #モデルを作る
